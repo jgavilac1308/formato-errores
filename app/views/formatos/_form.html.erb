@@ -1,0 +1,49 @@
+ <div class="center">
+ <%= form_for(@formato , :html => { :role => 'form'})  do |f|  %>
+  <% if @formato.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@formato.errors.count, "error") %> prohibited this formato from being saved:</h2>
+
+      <ul>
+      <% @formato.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group has-success has-feedback ">
+    <div class="row text-center">
+      <div class="col-xs-4 ">
+        <%= f.text_field :profesor, :class => 'form-control',  :required => true, :placeholder => 'Ingresar nombre completo del profesor' %>
+      </div>
+      <div class="col-md-4">
+        <%= f.date_select :fecha, :as => :string, :label => false,  :required => true, :class => 'input-group date', :placeholder => "FechaFinal",  :input_html => {  :class => "input-group date" } %>
+      </div>
+      <div class="col-md-4">
+        <%= f.text_field :curso, :class => 'form-control', :required => true, :placeholder => 'Ingresar nombre del curso.' %>
+      </div>
+    </div></br>
+    <div class="row">
+      <div class="col-md-4">
+        <%= f.text_field :grado, :class => 'form-control', :required => true, :placeholder => 'Ingresar nombre del grado.' %>
+      </div>
+      <div class="col-md-4">
+        <%= f.text_field :guia, :class => 'form-control', :required => true, :placeholder => 'Ingresar nombre de la guia.' %>
+      </div>
+      <div class="col-md-4">
+        <%= f.text_field :leccion, :class => 'form-control',  :required => true, :placeholder => 'Ingresar nombre de la lección.' %>
+      </div>
+    </div></br>
+     <div class="row">
+      <div class="col-md-12">
+        <%= f.text_area( :descripcion, :class => 'form-control',  :cols => "40",  :rows => 5, :placeholder => 'Describir el error  a corregir en este espacio', :html => { :class => "" }) %>
+      </div>
+  </div></br><hr>
+  <div class="actions">
+    <button type="submit" class="btn btn-primary">Enviar</button>
+    <%= link_to 'Atras', formatos_path, :class => 'btn btn-success' %>
+
+  </div>
+<% end %>
+ </div>

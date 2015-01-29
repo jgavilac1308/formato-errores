@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Formatos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Profesor</th>
+      <th>Fecha</th>
+      <th>Curso</th>
+      <th>Grado</th>
+      <th>Guia</th>
+      <th>Leccion</th>
+      <th>Descripcion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @formatos.each do |formato| %>
+      <tr>
+        <td><%= formato.profesor %></td>
+        <td><%= formato.fecha %></td>
+        <td><%= formato.curso %></td>
+        <td><%= formato.grado %></td>
+        <td><%= formato.guia %></td>
+        <td><%= formato.leccion %></td>
+        <td><%= formato.descripcion %></td>
+        <td><%= link_to 'Show', formato %></td>
+        <td><%= link_to 'Edit', edit_formato_path(formato) %></td>
+        <td><%= link_to 'Destroy', formato, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Formato', new_formato_path %>
