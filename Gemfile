@@ -8,6 +8,8 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'bootstrap-datetimepicker-rails', '~> 0.0.11'
+
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
@@ -28,7 +30,6 @@ group :development, :test do
   gem 'pg', '~> 0.18.1'
 end
 group :production do
-
   gem 'rails_12factor'
 end
 group :test do
