@@ -10,6 +10,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'bootstrap-datetimepicker-rails', '~> 0.0.11'
 
 
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
@@ -27,10 +28,9 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'rspec-rails'
-  gem 'pg', '~> 0.18.1'
 end
 group :production do
-  gem 'rails_12factor'
+  gem 'pg'
 end
 group :test do
   gem 'capybara'
